@@ -31,7 +31,8 @@ class BGAPIBackendTests(unittest.TestCase):
         self.time_patcher = mock.patch('pygatt.backends.bgapi.bgapi.time')
         self.time_patcher.start()
 
-        self.timeout_patcher = mock.patch('pygatt.backends.bgapi.bgapi._timed_out')
+        self.timeout_patcher = mock.patch(
+            'pygatt.backends.bgapi.bgapi._timed_out')
         timed_out = self.timeout_patcher.start()
         timed_out.return_value = True
 
